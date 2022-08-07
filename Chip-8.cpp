@@ -15,7 +15,8 @@ class Chip8 {
 public:
 
     Chip8()
-        : program_ctr(0x200), random_gen(std::chrono::system_clock::now().time_since_epoch().count()) {
+        : program_ctr(0x200), 
+        random_gen(std::chrono::system_clock::now().time_since_epoch().count()) {
 
         //load fonts into the memory
         for (int i = 0; i < 80; i++) {
@@ -92,7 +93,7 @@ public:
             memory[0x200 + i] = buffer[i];  //CHIP-8 programs start at address 0x200
         }
 
-        delete buffer;
+        delete[] buffer;
 
     }
 

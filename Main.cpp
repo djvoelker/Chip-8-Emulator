@@ -21,12 +21,12 @@ int main(int argc, char** argv)
 	chip8.Load_ROM(romFilename);
 
 	int videoPitch = sizeof(chip8.display[0]) * VIDEO_WIDTH;
-	auto lastCycleTime = std::chrono::high_resolution_clock::now();
+	std::chrono::steady_clock::time_point lastCycleTime = std::chrono::high_resolution_clock::now();
 	bool quit = false;
 
 	while (!quit) {
 		quit = platform.ProcessInput(chip8.keypad_state);
-		auto currentTime = std::chrono::high_resolution_clock::now();
+		std::chrono::steady_clock::time_point currentTime = std::chrono::high_resolution_clock::now();
 		float dt = std::chrono::duration<float, std::chrono::milliseconds::period>(currentTime - lastCycleTime).count();
 		if (dt > cycleDelay) {
 			lastCycleTime = currentTime;
