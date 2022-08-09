@@ -323,10 +323,10 @@ private:
         uint8_t VY = (opcode & 0x00F0u) >> 4u;
 
         if (registers[VX] > registers[VY]) {
-            registers[0xF] = 0;
+            registers[0xF] = 1;
         }
         else {
-            registers[0xF] = 1;
+            registers[0xF] = 0;
         }
 
         registers[VX] = registers[VX] - registers[VY];
