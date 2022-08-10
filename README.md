@@ -8,4 +8,4 @@ This emulator can take in a Chip-8 program and display the output using SDL. The
 
 The Wikipedia page for the Chip-8 (https://en.wikipedia.org/wiki/CHIP-8) was very helpful as it included the different instructions for the Chip-8.
 
-My original inspiration for this project came from a post online on the emulator101 website: http://www.emulator101.com/welcome.html.
+My original inspiration for this project came from a post online on the emulator101 website: www.emulator101.com, as well as a blog post on austinmorlan.com
